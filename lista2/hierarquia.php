@@ -38,3 +38,11 @@ abstract class Celular extends Telefone {
         $this->operadora = $operadora;
     }
 }
+
+class PrePago extends Celular {
+    public function calculaCusto(int $tempo): float {
+        $custoAcrescido = $this->custoMinutoBase * 1.40;
+        return $tempo * $custoAcrescido;
+    }
+}
+?>
