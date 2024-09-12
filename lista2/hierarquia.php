@@ -27,3 +27,14 @@ class Fixo extends Telefone {
         return $tempo * $this->custoPorMinuto;
     }
 }
+
+abstract class Celular extends Telefone {
+    protected float $custoMinutoBase;
+    protected string $operadora;
+
+    public function __construct(string $ddd, string $numero, float $custoMinutoBase, string $operadora) {
+        parent::__construct($ddd, $numero);
+        $this->custoMinutoBase = $custoMinutoBase;
+        $this->operadora = $operadora;
+    }
+}
