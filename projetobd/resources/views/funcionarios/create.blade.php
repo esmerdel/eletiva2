@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-app-layout>
     <h1>Cadastrar Novo Funcionário</h1>
 
     <form action="{{ route('funcionarios.store') }}" method="POST">
@@ -28,4 +26,4 @@
 
         <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>
-@endsection
+</x-app-layout>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Funcionario; // Importar o modelo
 
 class FuncionarioController extends Controller
 {
@@ -11,9 +12,8 @@ class FuncionarioController extends Controller
      */
     public function index()
     {
-        //
-        $funcionarios = Funcionario::all();
-        return view('funcionarios.index', compact('funcionarios'));
+        $funcionarios = Funcionario::all(); // Pega todos os funcionários
+        return view('funcionarios.index', compact('funcionarios')); // Passa para a view
     }
 
     /**
@@ -21,36 +21,36 @@ class FuncionarioController extends Controller
      */
     public function create()
     {
-        //
-        return view('funcionarios.create');
+        return view('funcionarios.create'); // Retorna o formulário de criação
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
-        Funcionario::create($request->all());
-        return redirect()->route('funcionarios.index');
-    }
+{
+    // Valida os dados enviados no formulário
+    $request->validate([
+        'nome' => 'required|string|max:255',
+        'cargo' => 'required|string|max:255',
+        'salario' => 'required|numeric',
+        'email' => 'required|email|unique:funcionarios,email',
+    ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+    // Cria um novo funcionário no banco de dados
+    Funcionario::create($request->all());
+
+    // Redireciona para a página de listagem de funcionários
+    return redirect()->route('funcionarios.index')->with('success', 'Funcionário cadastrado com sucesso!');
+}
+
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Funcionario $funcionario)
     {
-        //
-        return view('funcionarios.edit', compact('funcionario'));
-
+        return view('funcionarios.edit', compact('funcionario')); // Passa o funcionário específico para edição
     }
 
     /**
@@ -58,18 +58,16 @@ class FuncionarioController extends Controller
      */
     public function update(Request $request, Funcionario $funcionario)
     {
-        //
-        $funcionario->update($request->all());
-        return redirect()->route('funcionario.index');
+        $funcionario->update($request->all()); // Atualiza o funcionário
+        return redirect()->route('funcionarios.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Funcionario $funcionario) // Use o model binding
     {
-        //
-        $funcionario->delete();
-        return redirect()->route('funcionarios.index');
+        $funcionario->delete(); // Exclui o funcionário
+        return redirect()->route('funcionarios.index'); // Redireciona para a listagem
     }
 }

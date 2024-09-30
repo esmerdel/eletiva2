@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Controle de Estoque</title>
+    <title>Sistema de Cadastro de Funcionários</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         html, body {
@@ -27,7 +27,6 @@
             padding: 10px 0;
             width: 100%;
         }
-
     </style>
 </head>
 <body>
@@ -35,17 +34,17 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/dashboard">Sistema de Controle de Estoqueeeeeee</a>
+        <a class="navbar-brand" href="/dashboard">Sistema de Cadastro de Funcionários</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Produtos</a>
+                    <a class="nav-link" href="/funcionarios">Funcionários</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/categoria">Categorias</a>
+                    <a class="nav-link" href="/funcionarios/create">Adicionar Funcionário</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
@@ -58,7 +57,7 @@
                         <li><hr class="dropdown-divider"></li>
                         <li>
                             <form action="/logout" method="POST">
-                                @CSRF
+                                @csrf
                                 <button type="submit" class="dropdown-item">Sair</button>
                             </form>
                         </li>
@@ -75,9 +74,10 @@
 
 <footer>
     <div class="container">
-        <p>&copy; 2024 Sistema de Controle de Estoque. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Sistema de Cadastro de Funcionários. Todos os direitos reservados.</p>
     </div>
 </footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
