@@ -146,7 +146,34 @@ class ListaController extends Controller
     return view('exercicio10', ['perimetro' => $perimetro]);
 }
 
+    public function mostrarExercicio11()
+    {
+        return view('exercicio11');
+    }
 
+    public function calcularExercicio11(Request $request)
+    {
+    $raio = (float)$request->input("raio");
+
+    $perimetro = 2 * pi() * $raio;
+
+    return view('exercicio11', ['perimetro' => $perimetro]);
+}
+
+    public function mostrarExercicio12()
+    {
+        return view('exercicio12');
+    }
+
+    public function calcularExercicio12(Request $request)
+{
+    $base = (float)$request->input("base");
+    $expoente = (float)$request->input("expoente");
+
+    $resultado = pow($base, $expoente);
+
+    return view('exercicio12', ['resultado' => $resultado]);
+}
 
 
 
