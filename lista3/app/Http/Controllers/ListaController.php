@@ -25,7 +25,7 @@ class ListaController extends Controller
         $valor2 = (int)$request->input('val02');
         return $valor1 - $valor2;
     }
-    
+
     public function mostrarExercicio3()
     {
         return view('exercicio3');
@@ -38,6 +38,25 @@ class ListaController extends Controller
     $resultado = $valor1 * $valor2;
 
     return view('exercicio3', ['resultado' => $resultado]);
+}
+
+    public function mostrarExercicio4()
+    {
+        return view('exercicio4');
+    }
+
+    public function calcularExercicio4(Request $request)
+{
+    $numero1 = (float)$request->input("numero1");
+    $numero2 = (float)$request->input("numero2");
+
+    if ($numero2 == 0) {
+        $resultado = "Divisão por zero não é permitida.";
+    } else {
+        $resultado = $numero1 / $numero2;
+    }
+
+    return view('exercicio4', ['resultado' => $resultado]);
 }
 
 
