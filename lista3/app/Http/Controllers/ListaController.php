@@ -102,6 +102,21 @@ class ListaController extends Controller
     return view('exercicio7', ['celsius' => $celsius]);
 }
 
+    public function mostrarExercicio8()
+    {
+        return view('exercicio8');
+    }
+
+    public function calcularExercicio8(Request $request)
+{
+    $largura = (float)$request->input("largura");
+    $altura = (float)$request->input("altura");
+
+    $area = $largura * $altura;
+
+    return view('exercicio8', ['area' => $area]);
+}
+
 
 
 
