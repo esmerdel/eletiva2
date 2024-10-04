@@ -88,6 +88,20 @@ class ListaController extends Controller
     return view('exercicio6', ['fahrenheit' => $fahrenheit]);
 }
 
+    public function mostrarExercicio7()
+    {
+        return view('exercicio7');
+    }
+
+    public function calcularExercicio7(Request $request)
+{
+    $fahrenheit = (float)$request->input("temperatura");
+
+    $celsius = ($fahrenheit - 32) * 5/9;
+
+    return view('exercicio7', ['celsius' => $celsius]);
+}
+
 
 
 
