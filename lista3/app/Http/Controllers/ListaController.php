@@ -117,6 +117,35 @@ class ListaController extends Controller
     return view('exercicio8', ['area' => $area]);
 }
 
+    public function mostrarExercicio9()
+    {
+        return view('exercicio9');
+    }
+
+    public function calcularExercicio9(Request $request)
+{
+    $raio = (float)$request->input("raio");
+
+    $area = pi() * pow($raio, 2);
+
+    return view('exercicio9', ['area' => $area]);
+}
+
+    public function mostrarExercicio10()
+    {
+        return view('exercicio10');
+    }
+
+    public function calcularExercicio10(Request $request)
+{
+    $largura = (float)$request->input("largura");
+    $altura = (float)$request->input("altura");
+
+    $perimetro = 2 * ($largura + $altura);
+
+    return view('exercicio10', ['perimetro' => $perimetro]);
+}
+
 
 
 
