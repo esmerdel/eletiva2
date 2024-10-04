@@ -58,6 +58,22 @@ class ListaController extends Controller
 
     return view('exercicio4', ['resultado' => $resultado]);
 }
+    public function mostrarExercicio5()
+    {
+        return view('exercicio5');
+    }
+
+    public function calcularExercicio5(Request $request)
+{
+    $nota1 = (float)$request->input("nota1");
+    $nota2 = (float)$request->input("nota2");
+    $nota3 = (float)$request->input("nota3");
+
+    $media = ($nota1 + $nota2 + $nota3) / 3;
+
+    return view('exercicio5', ['media' => $media]);
+}
+
 
 
 
