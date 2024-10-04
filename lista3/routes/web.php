@@ -53,3 +53,9 @@ Route::post("/exercicio11/resposta", [ListaController::class, "calcularExercicio
 
 Route::get("/exercicio12", [ListaController::class, "mostrarExercicio12"]);
 Route::post("/exercicio12/resposta", [ListaController::class, "calcularExercicio12"]);
+
+Route::get("/exercicio13", [ListaController::class, "mostrarExercicio13"]);
+Route::post("/exercicio13/resposta", [ListaController::class, "calcularExercicio13"]);
+
+Route::get("/exercicio14", [ListaController::class, "mostrarExercicio14"]);
+Route::post("/exercicio14/resposta", [ListaController::class, "calcularExercicio14"]);

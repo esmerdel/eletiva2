@@ -175,6 +175,33 @@ class ListaController extends Controller
     return view('exercicio12', ['resultado' => $resultado]);
 }
 
+    public function mostrarExercicio13()
+    {
+        return view('exercicio13');
+    }
+
+    public function calcularExercicio13(Request $request)
+{
+    $metros = (float)$request->input("metros");
+
+    $centimetros = $metros * 100;
+
+    return view('exercicio13', ['centimetros' => $centimetros]);
+}
+
+    public function mostrarExercicio14()
+    {
+        return view('exercicio14');
+    }
+
+    public function calcularExercicio14(Request $request)
+{
+    $quilometros = (float)$request->input("quilometros");
+
+    $milhas = $quilometros * 0.621371;
+
+    return view('exercicio14', ['milhas' => $milhas]);
+}
 
 
 
