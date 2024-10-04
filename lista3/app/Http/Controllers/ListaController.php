@@ -203,6 +203,36 @@ class ListaController extends Controller
     return view('exercicio14', ['milhas' => $milhas]);
 }
 
+    public function mostrarExercicio15()
+    {
+        return view('exercicio15');
+    }
+
+    public function calcularExercicio15(Request $request)
+{
+    $peso = (float)$request->input("peso");
+    $altura = (float)$request->input("altura");
+
+    $imc = $peso / ($altura * $altura);
+
+    return view('exercicio15', ['imc' => $imc]);
+}
+
+    public function mostrarExercicio16()
+    {
+        return view('exercicio16');
+    }
+
+    public function calcularExercicio16(Request $request)
+{
+    $preco = (float)$request->input("preco");
+    $percentualDesconto = (float)$request->input("percentual_desconto");
+
+    $desconto = $preco * ($percentualDesconto / 100);
+    $precoComDesconto = $preco - $desconto;
+
+    return view('exercicio16', ['precoComDesconto' => $precoComDesconto]);
+}
 
 
 }
