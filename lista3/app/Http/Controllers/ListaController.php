@@ -235,4 +235,36 @@ class ListaController extends Controller
 }
 
 
+    public function mostrarExercicio17()
+    {
+        return view('exercicio17');
+    }
+
+    public function calcularExercicio17(Request $request)
+{
+    $capital = (float)$request->input("capital");
+    $taxa = (float)$request->input("taxa");
+    $periodo = (float)$request->input("periodo");
+
+    $jurosSimples = $capital * ($taxa / 100) * $periodo;
+
+    return view('exercicio17', ['jurosSimples' => $jurosSimples]);
+}
+
+    public function mostrarExercicio18()
+    {
+        return view('exercicio18');
+    }
+
+    public function calcularExercicio18(Request $request)
+{
+    $capital = (float)$request->input("capital");
+    $taxa = (float)$request->input("taxa");
+    $periodo = (float)$request->input("periodo");
+
+    $montante = $capital * pow((1 + ($taxa / 100)), $periodo);
+
+    return view('exercicio18', ['montante' => $montante]);
+}
+
 }
