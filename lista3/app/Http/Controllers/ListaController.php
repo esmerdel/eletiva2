@@ -25,4 +25,23 @@ class ListaController extends Controller
         $valor2 = (int)$request->input('val02');
         return $valor1 - $valor2;
     }
+    
+    public function mostrarExercicio3()
+    {
+        return view('exercicio3');
+    }
+    public function calcularExercicio3(Request $request)
+{
+    $valor1 = (int)$request->input("valor1");
+    $valor2 = (int)$request->input("valor2");
+
+    $resultado = $valor1 * $valor2;
+
+    return view('exercicio3', ['resultado' => $resultado]);
+}
+
+
+
+
+
 }

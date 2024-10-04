@@ -24,3 +24,6 @@ Route::post('/respostaexer1', [ListaController::class, 'calcularExer1']);
 Route::get('/exer2', [ListaController::class, 'mostrarEx02']);
 Route::post('/respostaexer2', [ListaController::class, 'calcularEx02']);
 
+Route::get("/exercicio3", [ListaController::class, "mostrarExercicio3"]);
+Route::post("/exercicio3/resposta", [ListaController::class, "calcularExercicio3"]);
+
