@@ -267,4 +267,39 @@ class ListaController extends Controller
     return view('exercicio18', ['montante' => $montante]);
 }
 
+    public function mostrarExercicio19()
+    {
+        return view('exercicio19');
+    }
+
+    public function calcularExercicio19(Request $request)
+{
+    $dias = (int)$request->input("dias");
+
+    $horas = $dias * 24;
+    $minutos = $horas * 60;
+    $segundos = $minutos * 60;
+
+    return view('exercicio19', ['horas' => $horas, 'minutos' => $minutos, 'segundos' => $segundos]);
+}
+
+    public function mostrarExercicio20()
+    {
+        return view('exercicio20');
+    }
+
+    public function calcularExercicio20(Request $request)
+{
+    $distancia = (float)$request->input("distancia");
+    $tempo = (float)$request->input("tempo");
+
+    if ($tempo > 0) {
+        $velocidadeMedia = $distancia / $tempo;
+    } else {
+        $velocidadeMedia = 0;
+    }
+
+    return view('exercicio20', ['velocidadeMedia' => $velocidadeMedia]);
+}
+
 }
